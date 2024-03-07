@@ -102,3 +102,42 @@ class Enrich_Info(QGroupBox):
 
         layout.addWidget(self.save_button,10,0,1,3)
         self.setLayout(layout)
+
+
+        def save_data(self):
+        
+                Enrich_list=[]
+        
+                value2 = self.Enrich2_input.value()
+                value2=str(value2)
+                value3 = self.Enrich3_input.value()
+                value3=str(value3)
+                value4 = self.Enrich4_input.value()
+                value4=str(value4)
+                value5 = self.Enrich5_input.value()
+                value5=str(value5)
+                value6 = self.Enrich6_input.value()
+                value6=str(value6)
+                value7 = self.Enrich7_input.value()
+                value7=str(value7)
+                value8 = self.Enrich8_input.value()
+                value8=str(value8)
+                value9 = self.Enrich9_input.value()
+                value9=str(value9)
+                
+                Enrich_list.append("Valve1_Start:"+value2)
+                Enrich_list.append("Valve1_Stop:"+value3)
+                Enrich_list.append("Valve2_Start:"+value4)
+                Enrich_list.append("Valve2_Stop:"+value5)
+                Enrich_list.append("Heater_Start:"+value6)
+                Enrich_list.append("Heater_Stop:"+value7)
+                Enrich_list.append("Fan_Start:"+value8)
+                Enrich_list.append("Fan_Stop:"+value9)
+        
+                filename='./userset/Enrich.txt'
+                
+                with open(filename, 'w') as file:
+                    file.truncate(0)
+                with open(filename,'w') as file:
+                    for item in Enrich_list:
+                        file.write(str(item)+'\n')
