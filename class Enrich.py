@@ -152,6 +152,17 @@ class Enrich_Info(QDialog):
         value10=str(value10)
         value11 = self.Enrich11_input.value()
         value11=str(value11)
+
+        for i in range(2,11,2):
+            start_value=getattr(self,f'Enrich{i}_input').value()
+            stop_value=getattr(self,f'Enrich{i+1}_input').value()
+            start_label=getattr(self,f'Enrich{i}_label').text()
+            stop_label=getattr(self,f'Enrich{i+1}_label').text()
+            
+            if start_value > stop_value:
+                QMessageBox().about(self, "Error", f'{start_label}{start_value} cannot be greater than {stop_label}{stop_value}')
+                return
+
         
         Enrich_list.append("Valve1_Start:"+value2)
         Enrich_list.append("Valve1_Stop:"+value3)
