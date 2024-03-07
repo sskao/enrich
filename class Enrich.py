@@ -6,7 +6,7 @@ main.py
 
     def SETTING(self):    
         dialog = UI.Enrich_Info()
-        dialog.exec_()
+        dialog.exec()
 
 
 class Enrich_Info(QDialog):
