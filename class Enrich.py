@@ -1,8 +1,18 @@
-class Enrich_Info(QGroupBox):
+main.py 
+    def ToolBar(self):
+        self.SETVALUE = QAction(QIcon(), "SETTING", self)
+        self.SETVALUE.triggered.connect(self.SETTING)
+        toolbar.addAction(self.SETVALUE)
+
+    def SETTING(self):    
+        dialog = UI.Enrich_Info()
+        dialog.exec_()
+
+
+class Enrich_Info(QDialog):
     def __init__(self, parent=None):
         super(Enrich_Info, self).__init__(parent)
-        self.setTitle("Enrich")
-        self.setGeometry(100, 100, 400, 200)       
+        self.setWindowTitle("Enrich")
         self.layout()
                    
     def layout(self):
